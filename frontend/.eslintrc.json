@@ -4,8 +4,9 @@
     "es2021": true
   },
   "extends": [
+    "plugin:react/recommended",
     "airbnb-typescript",
-    "airbnb-typescript/base",
+//    "airbnb-typescript/base",
     "plugin:import/recommended",
     "prettier"
   ],
@@ -25,12 +26,13 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/no-named-as-default": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true
-      }
-    ]
+    "prettier/prettier": ["error", {
+      "trailingComma": "es5",
+      "tabWidth": 2,
+      "semi": true,
+      "singleQuote": true,
+      "printWidth": 100
+    }]
   },
   "overrides": [
     // override "simple-import-sort" config

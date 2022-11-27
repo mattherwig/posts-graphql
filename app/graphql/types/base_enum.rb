@@ -1,4 +1,4 @@
-# typed: strict
+# typed: ignore
 module Types
   class BaseEnum < GraphQL::Schema::Enum
   end

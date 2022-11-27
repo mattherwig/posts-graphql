@@ -1,3 +1,4 @@
+# typed: false
 
 class Entities::User < ::T::Struct
   extend ::T::Sig

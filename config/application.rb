@@ -1,4 +1,3 @@
-# typed: strict
 require_relative "boot"
 
 require "rails"
@@ -38,7 +37,9 @@ module PostsGraphql
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # https://stackoverflow.com/questions/15342710/adding-cookie-session-store-back-to-rails-api-app
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore, key: '_namespace_key'
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
   end
 end

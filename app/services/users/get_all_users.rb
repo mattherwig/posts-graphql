@@ -1,4 +1,4 @@
-
+# typed: false
 
 class Users::GetAllUsers
   class Error < ::Error; end

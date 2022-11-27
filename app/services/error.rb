@@ -1,4 +1,4 @@
-
+# typed: true
 
 class Error < ::StandardError
   def user_errors

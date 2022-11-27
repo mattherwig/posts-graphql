@@ -1,4 +1,4 @@
-# typed: strict
+# typed: ignore
 module Types
   module NodeType
     include Types::BaseInterface

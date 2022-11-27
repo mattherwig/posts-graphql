@@ -1,3 +1,4 @@
+# typed: false
 class RecordInvalid < ::Error
   extend ::T::Sig
 

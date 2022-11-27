@@ -1,4 +1,4 @@
-# typed: true
+# typed: ignore
 class PostsGraphqlSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.6"
+ruby "3.0.5"
 
 gem "rails", "~> 7.0.4" # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'graphql'
@@ -9,7 +9,7 @@ gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use the Puma web server [https://github.com/puma/puma]
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'sorbet-runtime'
-
+gem 'erubi', '~> 1.11.0'
 
 # gem "jbuilder" # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production

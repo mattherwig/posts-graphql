@@ -1,3 +1,4 @@
+# typed: false
 class Users::GetUserById
   class Error < ::Error; end
   class RecordNotFound < Error; end

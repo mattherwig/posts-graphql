@@ -1,3 +1,4 @@
+# typed: strict
 
 class Entities::UserError < ::T::Struct
   const :path, [::Symbol]

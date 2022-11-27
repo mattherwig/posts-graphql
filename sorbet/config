@@ -1,3 +1,6 @@
 --dir
 .
---ignore=/vendor/bundle
+
+--ignore=vendor/
+--ignore=vendor/bundle
+--ignore=app/graphql/

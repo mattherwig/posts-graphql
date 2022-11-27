@@ -1,4 +1,4 @@
-# typed: strict
+# typed: false
 
 class Users::CreateUser
   class Error < ::Error; end
