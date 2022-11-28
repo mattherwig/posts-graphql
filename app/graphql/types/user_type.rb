@@ -6,17 +6,17 @@ module Types
     field :id, ID, null: false
     field :name, String
     field :email, String
+    field :deprecated_posts, Types::PostType.connection_type, null: false
     field :posts, Types::PostType.connection_type, null: false
-    field :post_count, Integer, null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
-    def posts
-      @posts ||= ::Post.where(user_id: object.id)
+    def deprecated_posts
+      ::BatchLoader::GraphQL.wrap(::Posts::GetLazyPostsByUserId.call(user_id: object.id))
     end
 
-    def post_count
-      posts.size
+    def posts
+      ::Loaders::LoadPostsByUserId.resolve(user_id: object.id)
     end
   end
 end

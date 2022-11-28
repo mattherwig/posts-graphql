@@ -1,17 +1,17 @@
 # typed: strict
 
-class Users::GetUserById
+class Posts::GetPostById
   class Error < ::Error; end
   class RecordNotFound < Error; end
 
   class << self
     extend ::T::Sig
 
-    sig { params(user_id: ::Integer).returns(::Entities::User) }
-    def call(user_id:)
-      user = ::User.find(user_id)
+    sig { params(post_id: ::Integer).returns(::Entities::Post) }
+    def call(post_id:)
+      user = ::Post.find(post_id)
 
-      ::Entities::User.from_model(user)
+      ::Entities::Post.from_model(user)
     rescue ::ActiveRecord::RecordNotFound => e
       raise RecordNotFound, e
     rescue ::StandardError => e

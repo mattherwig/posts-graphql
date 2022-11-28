@@ -1,4 +1,4 @@
-# typed: false
+# typed: strict
 
 class Users::CreateUser
   class Error < ::Error; end
@@ -14,8 +14,8 @@ class Users::CreateUser
       ::Entities::User.from_model(user)
     rescue ::ActiveRecord::RecordInvalid => e
       raise RecordInvalidError, e
-    rescue ::StandardError
-      raise Error, 'Could not create a new user.'
+    rescue ::StandardError => e
+      raise Error, e
     end
   end
 end
