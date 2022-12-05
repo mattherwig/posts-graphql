@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_145310) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_03_221402) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "choices", force: :cascade do |t|
-    t.bigint "poll_id", null: false
+    t.bigint "poll_id", default: 0, null: false
     t.string "choice_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_145310) do
   end
 
   create_table "polls", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id", default: 0, null: false
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_145310) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id", default: 0, null: false
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -50,9 +50,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_145310) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.bigint "poll_id", null: false
-    t.bigint "choice_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "poll_id", default: 0, null: false
+    t.bigint "choice_id", default: 0, null: false
+    t.bigint "user_id", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["choice_id", "poll_id"], name: "index_votes_on_choice_id_and_poll_id", unique: true

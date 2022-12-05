@@ -1,0 +1,10 @@
+$radius: calc(2 * var(--spacing-unit));
+
+@mixin rounded {
+  border-radius: $radius;
+}
+
+@mixin roundedBottom {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}

@@ -10,15 +10,15 @@ class Entities::Post < ::T::Struct
   const :created_at, ::Time
   const :updated_at, ::Time
 
-  sig { params(user: ::Post).returns(::Entities::Post) }
-  def self.from_model(user)
+  sig { params(post: ::Post).returns(::Entities::Post) }
+  def self.from_model(post)
     ::Entities::Post.new(
-      id: user.id,
-      user_id: user.user_id,
-      title: user.title,
-      body: user.body,
-      created_at: user.created_at,
-      updated_at: user.updated_at,
+      id: post.id,
+      user_id: post.user_id,
+      title: post.title,
+      body: post.body,
+      created_at: post.created_at,
+      updated_at: post.updated_at,
     )
   end
 end

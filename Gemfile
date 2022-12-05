@@ -12,6 +12,7 @@ gem 'sorbet-runtime'
 gem 'erubi', '~> 1.11.0'
 gem 'batch-loader'
 gem 'redis'
+gem 'annotate'
 
 # gem "jbuilder" # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

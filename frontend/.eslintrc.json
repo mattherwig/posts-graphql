@@ -23,10 +23,12 @@
     "prettier"
   ],
   "rules": {
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
     "import/no-named-as-default": "off",
-    "prettier/prettier": ["error", {
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "prettier/prettier": ["warn", {
       "trailingComma": "es5",
       "tabWidth": 2,
       "semi": true,
@@ -45,7 +47,7 @@
       ],
       "rules": {
         "simple-import-sort/imports": [
-          "error",
+          "warn",
           {
             "groups": [
               // Packages `react` related packages come first.

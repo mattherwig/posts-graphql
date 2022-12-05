@@ -1,11 +1,11 @@
 # typed: ignore
-class PostsGraphqlSchema < GraphQL::Schema
-  mutation(Types::MutationType)
-  query(Types::QueryType)
+class PostsGraphqlSchema < ::GraphQL::Schema
+  mutation(::Types::MutationType)
+  query(::Types::QueryType)
 
   # For batch-loading (see https://graphql-ruby.org/dataloader/overview.html)
-  use GraphQL::Dataloader
-  use BatchLoader::GraphQL
+  use ::GraphQL::Dataloader
+  use ::BatchLoader::GraphQL
 
   # GraphQL-Ruby calls this when something goes wrong while running a query:
   def self.type_error(err, context)
@@ -20,7 +20,7 @@ class PostsGraphqlSchema < GraphQL::Schema
   def self.resolve_type(abstract_type, obj, ctx)
     # TODO: Implement this method
     # to return the correct GraphQL object type for `obj`
-    raise(GraphQL::RequiredImplementationMissingError)
+    raise(::GraphQL::RequiredImplementationMissingError)
   end
 
   # Stop validating when it encounters this many errors:
@@ -37,6 +37,6 @@ class PostsGraphqlSchema < GraphQL::Schema
   # Given a string UUID, find the object
   def self.object_from_id(global_id, query_ctx)
     # For example, use Rails' GlobalID library (https://github.com/rails/globalid):
-    GlobalID.find(global_id)
+    ::GlobalID.find(global_id)
   end
 end

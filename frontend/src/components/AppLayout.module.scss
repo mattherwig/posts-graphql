@@ -1,0 +1,11 @@
+
+.container {
+  max-width: calc(250 * var(--spacing-unit));
+  margin: auto;
+}
+
+.body {
+  margin-top: calc(8 * var(--spacing-unit));
+  display: grid;
+  gap: calc(4 * var(--spacing-unit));
+}

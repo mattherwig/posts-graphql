@@ -1,0 +1,11 @@
+
+
+.container {
+  display: grid;
+  gap: calc(4 * var(--spacing-unit));
+
+  & > :first-child {
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -1,0 +1,19 @@
+
+
+.container {
+  background: var(--color-black);
+  padding: var(--spacing-unit);
+  padding-left: calc(4 * var(--spacing-unit));
+  padding-right: calc(4 * var(--spacing-unit));
+  border: none;
+  border-radius: var(--spacing-unit);
+  font-family: 'Bungee', 'Montserrat', cursive;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: normal;
+  transition: all 100ms ease-in;
+
+  &:hover {
+    background: var(--color-black-tint);
+  }
+}

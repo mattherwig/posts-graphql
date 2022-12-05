@@ -11,7 +11,7 @@
 def create_user_posts(user)
   5.times do
     title = ::Faker::Lorem.sentence(word_count: 2)
-    body = ::Faker::Lorem.paragraph(sentence_count: 3)
+    body = ::Faker::Lorem.paragraph(sentence_count: 30, random_sentences_to_add: 20)
 
     user.posts.create(title: title, body: body)
   end
@@ -30,7 +30,7 @@ end
 
 def create_polls
   5.times do
-    poll = Poll.create(question: ::Faker::Lorem.sentence(word_count: 3), user: User.all.sample)
+    poll = Poll.create(question: ::Faker::Lorem.question(word_count: 3), user: User.all.sample)
     4.times do
       poll.choices.create(choice_text: ::Faker::Lorem.sentence(word_count: 3))
     end

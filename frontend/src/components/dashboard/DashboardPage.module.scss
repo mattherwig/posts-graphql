@@ -1,0 +1,17 @@
+
+
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 32px;
+  margin: calc(4 * var(--spacing-unit));
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    grid-auto-flow: column;
+    grid-template-columns: 2fr 1fr;
+    width: calc(250 * var(--spacing-unit));
+    margin: unset;
+  }
+}

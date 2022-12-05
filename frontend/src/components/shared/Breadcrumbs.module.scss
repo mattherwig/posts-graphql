@@ -1,0 +1,13 @@
+
+
+.container {
+  outline: 1px solid green;
+}
+
+.container > * {
+  outline: 1px solid red;
+}
+
+.container > *:not(:last-child):after {
+  content: '/';
+}

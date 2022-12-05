@@ -4,9 +4,9 @@
 # Table name: votes
 #
 #  id         :bigint           not null, primary key
-#  poll_id    :bigint           not null
-#  choice_id  :bigint           not null
-#  user_id    :bigint           not null
+#  poll_id    :bigint           default(0), not null
+#  choice_id  :bigint           default(0), not null
+#  user_id    :bigint           default(0), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

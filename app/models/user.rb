@@ -16,9 +16,9 @@
 #  index_users_on_name_and_email  (name,email) UNIQUE
 #
 class User < ApplicationRecord
-  has_many :posts
-  has_many :votes
-  has_many :polls
+  has_many :posts, dependent: :delete_all
+  has_many :votes, dependent: :delete_all
+  has_many :polls, dependent: :delete_all
 
 
   validates :name,

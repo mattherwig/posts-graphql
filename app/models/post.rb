@@ -5,7 +5,7 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
-#  user_id    :bigint           not null
+#  user_id    :bigint           default(0), not null
 #  title      :string
 #  body       :text
 #  created_at :datetime         not null

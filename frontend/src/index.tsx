@@ -1,23 +1,24 @@
 import './index.css';
 
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { ApolloClient } from 'apollo-client';
-import { createHttpLink } from 'apollo-link-http';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import React from 'react';
-import { ApolloProvider } from 'react-apollo';
 import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 
-import App from './App';
+import { router } from './components/AppRouter';
+import { BASE_GRAPHQL_URL } from './constants';
 import reportWebVitals from './reportWebVitals';
 
-const link = createHttpLink({ uri: 'http://localhost:5000/graphql' });
-const client = new ApolloClient({ link, cache: new InMemoryCache() });
+const client = new ApolloClient({
+  uri: BASE_GRAPHQL_URL,
+  cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <RouterProvider router={router} />
     </ApolloProvider>
   </React.StrictMode>
 );

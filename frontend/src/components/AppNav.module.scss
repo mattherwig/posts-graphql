@@ -1,0 +1,25 @@
+@use 'src/styles/shadows' as *;
+@use 'src/styles/corners' as *;
+
+.container {
+  @include shadow;
+  @include roundedBottom;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  gap: calc(4 * var(--spacing-unit));
+  background: white;
+  padding: calc(4 * var(--spacing-unit));
+}
+
+.left {
+  display: flex;
+  gap: calc(4 * var(--spacing-unit));
+}
+
+.right {
+  display: flex;
+  gap: calc(4 * var(--spacing-unit));
+}

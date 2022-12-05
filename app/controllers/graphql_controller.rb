@@ -9,9 +9,11 @@ class GraphqlController < ApplicationController
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+
+    fake_user = ::User.first # don't want to deal with auth atm
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: fake_user,
+      user_id: fake_user.id,
     }
     result = PostsGraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
